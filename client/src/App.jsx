@@ -15,6 +15,7 @@ import CreateCourse from './pages/CreateCourse.jsx';
 import ManageCourse from './pages/ManageCourse.jsx';
 import NotFound from './pages/NotFound.jsx';
 import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
 
           {/* New Pages */}
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route
             path="/student"
