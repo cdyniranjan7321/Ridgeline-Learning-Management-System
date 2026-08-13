@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 const About = () => {
   const teamMembers = [
     {
-      name: 'John Doe',
+      name: 'Niranjan Chaudhary',
       role: 'CEO & Founder',
-      bio: '10+ years in EdTech, passionate about accessible education.',
-      image: 'https://ui-avatars.com/api/?name=John+Doe&background=4F46E5&color=fff&size=100'
+      bio: '4+ years in EdTech, passionate about accessible education.',
+      image: 'https://ui-avatars.com/api/?name=Niranjan+Chaudhary&background=4F46E5&color=fff&size=100'
     },
     {
       name: 'Jane Smith',
