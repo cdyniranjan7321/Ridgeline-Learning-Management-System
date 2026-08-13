@@ -14,6 +14,7 @@ import InstructorDashboard from './pages/InstructorDashboard.jsx';
 import CreateCourse from './pages/CreateCourse.jsx';
 import ManageCourse from './pages/ManageCourse.jsx';
 import NotFound from './pages/NotFound.jsx';
+import About from './pages/About.jsx';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/courses" element={<CourseCatalog />} />
           <Route path="/courses/:id" element={<CourseDetail />} />
+
+          {/* New Pages */}
+          <Route path="/about" element={<About />} />
 
           <Route
             path="/student"
