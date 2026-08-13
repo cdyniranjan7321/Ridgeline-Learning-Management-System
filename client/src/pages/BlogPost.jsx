@@ -1,10 +1,11 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const BlogPost = () => {
   const { id } = useParams();
 
-  // Sample blog post data (in real app, fetch from API)
+  // Complete blog post data for ALL posts
   const posts = {
     1: {
       title: '10 Tips for Successful Online Learning',
@@ -72,8 +73,139 @@ const BlogPost = () => {
         <h2>Challenges and Considerations</h2>
         <p>While AI offers immense potential, we must address concerns about data privacy, algorithmic bias, and the importance of human connection in education.</p>
       `
+    },
+    3: {
+      title: 'Building a Growth Mindset for Career Success',
+      author: 'Emily Rodriguez',
+      date: 'July 28, 2026',
+      category: 'Career Development',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop',
+      content: `
+        <h2>Introduction</h2>
+        <p>Developing a growth mindset is essential for career success. Learn how to embrace challenges and persist through obstacles.</p>
+        
+        <h2>What is a Growth Mindset?</h2>
+        <p>A growth mindset is the belief that abilities and intelligence can be developed through dedication and hard work. This creates a love of learning and resilience.</p>
+        
+        <h2>Embrace Challenges</h2>
+        <p>View challenges as opportunities to grow rather than obstacles to avoid. Each challenge you overcome builds your skills and confidence.</p>
+        
+        <h2>Learn from Criticism</h2>
+        <p>Constructive feedback is valuable for growth. Listen actively, reflect on the feedback, and use it to improve your performance.</p>
+        
+        <h2>Celebrate Effort, Not Just Results</h2>
+        <p>Focus on the process of learning and improvement rather than just the outcome. Effort leads to mastery over time.</p>
+        
+        <h2>Practical Steps to Develop a Growth Mindset</h2>
+        <ul>
+          <li>Replace "I can't" with "I can't yet"</li>
+          <li>Seek out learning opportunities</li>
+          <li>Reflect on your progress regularly</li>
+          <li>Surround yourself with positive influences</li>
+          <li>Set learning goals instead of performance goals</li>
+        </ul>
+      `
+    },
+    4: {
+      title: 'Mastering Time Management as a Student',
+      author: 'David Kim',
+      date: 'July 20, 2026',
+      category: 'Student Life',
+      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=400&fit=crop',
+      content: `
+        <h2>Introduction</h2>
+        <p>Effective time management is crucial for student success. Learn strategies to balance academics, work, and personal life.</p>
+        
+        <h2>The Importance of Time Management</h2>
+        <p>Good time management reduces stress, improves productivity, and creates a healthier work-life balance.</p>
+        
+        <h2>Key Strategies</h2>
+        <h3>1. Prioritize Tasks</h3>
+        <p>Use the Eisenhower Matrix to categorize tasks by urgency and importance. Focus on what matters most.</p>
+        
+        <h3>2. Create a Schedule</h3>
+        <p>Block out time for studying, classes, work, and personal activities. Stick to your schedule as much as possible.</p>
+        
+        <h3>3. Avoid Procrastination</h3>
+        <p>Break large tasks into smaller steps. Start with the hardest task when your energy is highest.</p>
+        
+        <h3>4. Use Time Management Tools</h3>
+        <p>Try tools like Trello, Notion, or Google Calendar to track deadlines and organize your tasks.</p>
+        
+        <h3>5. Take Breaks</h3>
+        <p>Use techniques like Pomodoro to maintain focus and prevent burnout. Regular breaks improve productivity.</p>
+        
+        <h2>Conclusion</h2>
+        <p>Mastering time management takes practice. Start with small changes and build your skills over time.</p>
+      `
+    },
+    5: {
+      title: 'Why Continuous Learning Matters in 2026',
+      author: 'Dr. Sarah Johnson',
+      date: 'July 15, 2026',
+      category: 'Learning Tips',
+      image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=400&fit=crop',
+      content: `
+        <h2>Introduction</h2>
+        <p>In today's fast-paced world, continuous learning is more important than ever. Discover why lifelong learning is essential for personal and professional growth.</p>
+        
+        <h2>Rapid Technological Change</h2>
+        <p>Technology evolves quickly. Continuous learning helps you stay relevant and adapt to new tools and methodologies.</p>
+        
+        <h2>Career Advancement</h2>
+        <p>Employers value candidates who show initiative and adaptability. Lifelong learning demonstrates commitment to personal development.</p>
+        
+        <h2>Personal Fulfillment</h2>
+        <p>Learning new skills and knowledge brings a sense of achievement and opens new perspectives on the world.</p>
+        
+        <h2>How to Embrace Continuous Learning</h2>
+        <ul>
+          <li>Take online courses regularly</li>
+          <li>Read books and articles in your field</li>
+          <li>Attend workshops and conferences</li>
+          <li>Join professional communities</li>
+          <li>Learn from peers and mentors</li>
+        </ul>
+        
+        <h2>Conclusion</h2>
+        <p>Continuous learning is not just a choice—it's a necessity in 2026. Start your learning journey today.</p>
+      `
+    },
+    6: {
+      title: 'How to Choose the Right Course for Your Goals',
+      author: 'Emily Rodriguez',
+      date: 'July 10, 2026',
+      category: 'Career Development',
+      image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop',
+      content: `
+        <h2>Introduction</h2>
+        <p>With so many courses available, choosing the right one can be overwhelming. This guide will help you select the perfect course for your goals.</p>
+        
+        <h2>Define Your Goals</h2>
+        <p>Start by clarifying what you want to achieve. Are you looking to advance your career, learn a new skill, or explore a new field?</p>
+        
+        <h2>Assess Your Current Skills</h2>
+        <p>Evaluate your current knowledge and identify gaps. Choose courses that build on your existing skills while filling those gaps.</p>
+        
+        <h2>Research Course Content</h2>
+        <p>Review the course syllabus carefully. Does it cover topics you're interested in? Is the content up-to-date?</p>
+        
+        <h2>Check Instructor Credentials</h2>
+        <p>Look for instructors with relevant experience and positive reviews. Great instructors make a big difference in learning outcomes.</p>
+        
+        <h2>Consider Learning Format</h2>
+        <p>Do you prefer self-paced or instructor-led courses? Think about your schedule and learning style.</p>
+        
+        <h2>Read Reviews</h2>
+        <p>Check reviews from past students. Look for feedback on course quality, instructor support, and practical application.</p>
+        
+        <h2>Evaluate Cost and Value</h2>
+        <p>Compare the cost of the course against the value it offers. Consider potential return on investment for your career.</p>
+        
+        <h2>Start Small</h2>
+        <p>If you're unsure, start with a short course to test the waters. You can always pursue more advanced courses later.</p>
+      `
     }
-    // Add more posts as needed
   };
 
   const post = posts[id];
