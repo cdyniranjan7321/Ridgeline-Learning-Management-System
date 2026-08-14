@@ -117,10 +117,10 @@ const Footer = () => {
               </span>
             </button>
             <ul className={`space-y-1 text-xs sm:text-sm mt-2 ${openSection === 'support' || window.innerWidth >= 640 ? 'block' : 'hidden sm:block'}`}>
-              <li><Link to="/faq" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">FAQ</Link></li>
-              <li><Link to="/help" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Help Center</Link></li>
-              <li><Link to="/privacy" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Privacy</Link></li>
-              <li><Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Terms</Link></li>
+              <li><Link to="#faq" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">FAQ</Link></li>
+              <li><Link to="#help" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Help Center</Link></li>
+              <li><Link to="#privacy" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Privacy</Link></li>
+              <li><Link to="#terms" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Terms</Link></li>
             </ul>
           </div>
 
