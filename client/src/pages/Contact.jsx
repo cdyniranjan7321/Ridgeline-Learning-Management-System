@@ -337,7 +337,7 @@ const Contact = () => {
                     </span>
                   ) : (
                     <span className="flex items-center justify-center gap-2">
-                      Send Message ✨
+                      Send Message {/* ✨ */}
                     </span>
                   )}
                 </button>
