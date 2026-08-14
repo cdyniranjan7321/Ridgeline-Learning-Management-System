@@ -202,7 +202,7 @@ const Footer = () => {
             <span className="hidden sm:inline text-gray-300">|</span>
             <span className="flex items-center gap-1">
               <span className="inline-block w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-              <span className="text-gray-400">v2.0</span>
+              <span className="text-gray-400">Niranjan Chaudhary</span>
             </span>
           </div>
         </div>
