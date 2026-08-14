@@ -22,6 +22,24 @@ const Footer = () => {
     setOpenSection(openSection === section ? null : section);
   };
 
+  // Smooth scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  // Handle navigation with scroll to top
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    scrollToTop();
+    // Navigate after a small delay to ensure scroll completes
+    setTimeout(() => {
+      window.location.href = path;
+    }, 100);
+  };
+
   const socialLinks = [
     { 
       name: 'Twitter', 
@@ -61,6 +79,14 @@ const Footer = () => {
     }
   ];
 
+  // Navigation links with scroll to top
+  const navLinks = [
+    { to: '/courses', label: 'Courses' },
+    { to: '/about', label: 'About Us' },
+    { to: '/contact', label: 'Contact' },
+    { to: '/blog', label: 'Blog' }
+  ];
+
   return (
     <footer className="bg-gradient-to-b from-white to-gray-50 border-t border-gray-200 mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
@@ -98,10 +124,17 @@ const Footer = () => {
               </span>
             </button>
             <ul className={`space-y-1 text-xs sm:text-sm mt-2 ${openSection === 'quickLinks' || window.innerWidth >= 640 ? 'block' : 'hidden sm:block'}`}>
-              <li><Link to="/courses" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Courses</Link></li>
-              <li><Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">About Us</Link></li>
-              <li><Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Contact</Link></li>
-              <li><Link to="/blog" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Blog</Link></li>
+              {navLinks.map((link) => (
+                <li key={link.to}>
+                  <Link 
+                    to={link.to}
+                    onClick={scrollToTop}
+                    className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -117,10 +150,10 @@ const Footer = () => {
               </span>
             </button>
             <ul className={`space-y-1 text-xs sm:text-sm mt-2 ${openSection === 'support' || window.innerWidth >= 640 ? 'block' : 'hidden sm:block'}`}>
-              <li><Link to="/faq" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">FAQ</Link></li>
-              <li><Link to="/help" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Help Center</Link></li>
-              <li><Link to="/privacy" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Privacy</Link></li>
-              <li><Link to="/terms" className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Terms</Link></li>
+              <li><Link to="#faq" onClick={scrollToTop} className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">FAQ</Link></li>
+              <li><Link to="#help" onClick={scrollToTop} className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Help Center</Link></li>
+              <li><Link to="#privacy" onClick={scrollToTop} className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Privacy</Link></li>
+              <li><Link to="#terms" onClick={scrollToTop} className="text-gray-600 hover:text-blue-600 transition-colors block py-0.5">Terms</Link></li>
             </ul>
           </div>
 
@@ -169,11 +202,22 @@ const Footer = () => {
             <span className="hidden sm:inline text-gray-300">|</span>
             <span className="flex items-center gap-1">
               <span className="inline-block w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse"></span>
-              <span className="text-gray-400">v2.0</span>
+              <span className="text-gray-400">Niranjan Chaudhary</span>
             </span>
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button (Optional) */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-4 right-4 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all hover:scale-110 z-50"
+        aria-label="Back to top"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+      </button>
     </footer>
   );
 };
