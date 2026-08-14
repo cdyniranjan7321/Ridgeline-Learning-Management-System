@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -28,9 +29,18 @@ const Navbar = () => {
 
   const dashboardPath = user?.role === 'instructor' || user?.role === 'admin' ? '/instructor' : '/student';
 
+  // Navigation items for mobile menu
+  const navItems = [
+    { to: '/courses', label: 'Explore Courses' },
+    { to: '/about', label: 'About Us' },
+    { to: '/contact', label: 'Contact' },
+    { to: '/blog', label: 'Blog' },
+  ];
+
   return (
     <header className="sticky top-0 z-40 bg-parchment-50/90 backdrop-blur border-b border-ink-900/8">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
           <span className="h-8 w-8 rounded-lg bg-ink-900 text-amber-400 font-display font-bold flex items-center justify-center text-sm">
             R
@@ -38,14 +48,19 @@ const Navbar = () => {
           <span className="font-display font-bold text-lg tracking-tight">Ridgeline</span>
         </Link>
 
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
           <NavItem to="/courses">Explore Courses</NavItem>
+          <NavItem to="/about">About Us</NavItem>
+          <NavItem to="/contact">Contact</NavItem>
+          <NavItem to="/blog">Blog</NavItem>
           {user && <NavItem to={dashboardPath}>Dashboard</NavItem>}
           {(user?.role === 'instructor' || user?.role === 'admin') && (
             <NavItem to="/instructor/courses/new">Create Course</NavItem>
           )}
         </div>
 
+        {/* Desktop User Actions */}
         <div className="hidden md:flex items-center gap-3">
           {user ? (
             <div className="flex items-center gap-3">
@@ -69,6 +84,7 @@ const Navbar = () => {
           )}
         </div>
 
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-ink-900/5"
           onClick={() => setOpen((o) => !o)}
@@ -80,24 +96,44 @@ const Navbar = () => {
         </button>
       </nav>
 
+      {/* Mobile Menu */}
       {open && (
         <div className="md:hidden border-t border-ink-900/8 px-4 py-3 space-y-1 bg-parchment-50">
-          <NavItem to="/courses">Explore Courses</NavItem>
+          {/* Main Navigation Links */}
+          {navItems.map((item) => (
+            <NavItem key={item.to} to={item.to}>
+              {item.label}
+            </NavItem>
+          ))}
+          
+          {/* User-specific links */}
           {user && <NavItem to={dashboardPath}>Dashboard</NavItem>}
           {(user?.role === 'instructor' || user?.role === 'admin') && (
             <NavItem to="/instructor/courses/new">Create Course</NavItem>
           )}
+          
+          {/* User Actions */}
           <div className="pt-2 border-t border-ink-900/8 mt-2">
             {user ? (
-              <button onClick={handleLogout} className="btn-outline w-full">
-                Log out
-              </button>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm text-ink-900/70">
+                    Hi, <span className="font-semibold text-ink-900">{user.name}</span>
+                  </span>
+                  <span className="badge bg-moss-500/10 text-moss-600 capitalize text-xs">
+                    {user.role}
+                  </span>
+                </div>
+                <button onClick={handleLogout} className="btn-outline w-full">
+                  Log out
+                </button>
+              </div>
             ) : (
-              <div className="flex gap-2">
-                <Link to="/login" className="btn-outline flex-1" onClick={() => setOpen(false)}>
+              <div className="flex flex-col gap-2">
+                <Link to="/login" className="btn-outline w-full text-center" onClick={() => setOpen(false)}>
                   Log in
                 </Link>
-                <Link to="/register" className="btn-accent flex-1" onClick={() => setOpen(false)}>
+                <Link to="/register" className="btn-accent w-full text-center" onClick={() => setOpen(false)}>
                   Get started
                 </Link>
               </div>
