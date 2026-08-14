@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -35,7 +36,6 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
-    // Clear error for this field when user starts typing
     if (errors[e.target.name]) {
       setErrors({
         ...errors,
@@ -65,21 +65,21 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Phone',
-      details: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      details: '+977-984-1234567',
+      link: 'tel:+9779841234567',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: '📍',
       title: 'Address',
-      details: '123 Learning Street, EdTech City, EC 12345',
+      details: 'Lakeside, Pokhara-6, Nepal',
       link: '#',
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: '🕐',
       title: 'Working Hours',
-      details: 'Mon-Fri: 9:00 AM - 6:00 PM',
+      details: 'Mon-Fri: 9:00 AM - 6:00 PM (NPT)',
       link: '#',
       color: 'from-orange-500 to-orange-600'
     }
@@ -99,6 +99,9 @@ const Contact = () => {
       answer: 'We offer a 14-day free trial with full access to all features.'
     }
   ];
+
+  // Google Maps Embed URL for Pokhara
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14131.036252732825!2d83.9744473!3d28.2095832!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995956c8d9f7b0b%3A0x5b0d7b7f7b7b7b7b!2sPokhara%2C%20Nepal!5e0!3m2!1sen!2snp!4v1640000000000";
 
   return (
     <div className="bg-white">
@@ -150,7 +153,7 @@ const Contact = () => {
                 Email Us
               </a>
               <a 
-                href="tel:+15551234567" 
+                href="tel:+9779841234567" 
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-xl hover:bg-white/30 transition-all transform hover:scale-105 border border-white/30"
               >
                 <span>📞</span>
@@ -352,6 +355,113 @@ const Contact = () => {
           </div>
         </div>
 
+        {/* Google Maps Section - Pokhara */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <span className="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-4 py-1 rounded-full mb-3">
+              📍 Find Us
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Visit Our Office</h2>
+            <p className="text-gray-600 mt-2">Lakeside, Pokhara-6, Nepal</p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="relative w-full h-96">
+              <iframe
+                src={mapEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps - Pokhara, Nepal"
+                className="hover:opacity-95 transition-opacity"
+              ></iframe>
+              
+              {/* Map Overlay Info */}
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-4 max-w-xs">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-lg flex-shrink-0">
+                    📍
+                  </div>
+                  <div>
+                    <p className="font-semibold text-gray-900 text-sm">Ridgeline LMS</p>
+                    <p className="text-gray-600 text-xs">Lakeside, Pokhara-6</p>
+                    <p className="text-gray-600 text-xs">Nepal</p>
+                    <a 
+                      href="https://www.google.com/maps/dir//Pokhara,+Nepal" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-block mt-1 text-blue-600 text-xs font-medium hover:text-blue-700"
+                    >
+                      Get Directions →
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Actions */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-4 bg-gray-50">
+              <a 
+                href="https://www.google.com/maps/dir//Pokhara,+Nepal" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-white rounded-lg hover:bg-blue-50 transition-colors text-sm text-gray-700 hover:text-blue-600"
+              >
+                <span>🗺️</span> Directions
+              </a>
+              <a 
+                href="https://www.google.com/maps/place/Pokhara/@28.2095832,83.9744473,12z" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-white rounded-lg hover:bg-blue-50 transition-colors text-sm text-gray-700 hover:text-blue-600"
+              >
+                <span>🖼️</span> Street View
+              </a>
+              <button 
+                onClick={() => window.open('https://www.google.com/maps/place/Pokhara/@28.2095832,83.9744473,12z', '_blank')}
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-white rounded-lg hover:bg-blue-50 transition-colors text-sm text-gray-700 hover:text-blue-600"
+              >
+                <span>🔍</span> Explore Area
+              </button>
+              <a 
+                href="https://www.google.com/maps/place/Pokhara/@28.2095832,83.9744473,12z" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+              >
+                <span>📱</span> Open in Maps
+              </a>
+            </div>
+          </div>
+
+          {/* Nearby Landmarks */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6">
+            <div className="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition-all hover:-translate-y-1">
+              <div className="text-2xl mb-1">🏔️</div>
+              <p className="font-semibold text-gray-800 text-sm">Fewa Lake</p>
+              <p className="text-gray-500 text-xs">5 min walk</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition-all hover:-translate-y-1">
+              <div className="text-2xl mb-1">⛰️</div>
+              <p className="font-semibold text-gray-800 text-sm">World Peace Stupa</p>
+              <p className="text-gray-500 text-xs">15 min drive</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition-all hover:-translate-y-1">
+              <div className="text-2xl mb-1">🪂</div>
+              <p className="font-semibold text-gray-800 text-sm">Sarangkot</p>
+              <p className="text-gray-500 text-xs">30 min drive</p>
+            </div>
+            <div className="bg-gray-50 p-4 rounded-xl text-center hover:shadow-md transition-all hover:-translate-y-1">
+              <div className="text-2xl mb-1">🏘️</div>
+              <p className="font-semibold text-gray-800 text-sm">Lakeside Street</p>
+              <p className="text-gray-500 text-xs">2 min walk</p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ Section */}
         <div className="mt-16">
           <div className="text-center mb-8">
@@ -368,20 +478,6 @@ const Contact = () => {
                 <p className="text-gray-600 text-sm">{faq.answer}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Map Section (Optional) */}
-        <div className="mt-12">
-          <div className="bg-gray-200 rounded-2xl overflow-hidden h-64 relative">
-            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-r from-blue-500/10 to-purple-500/10">
-              <div className="text-center">
-                <div className="text-6xl mb-2">📍</div>
-                <p className="text-gray-600 font-medium">123 Learning Street, EdTech City</p>
-                <p className="text-gray-500 text-sm">Find us here</p>
-              </div>
-            </div>
-            {/* You can embed Google Maps iframe here */}
           </div>
         </div>
       </div>
