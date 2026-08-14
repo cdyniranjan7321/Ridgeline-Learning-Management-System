@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
@@ -125,7 +126,7 @@ const Home = () => {
         <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <div>
             <span className="inline-block badge bg-blue-500/10 text-blue-600 mb-5 animate-pulse-slow">
-              🚀 Video-first learning
+               Video-first learning
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-[1.08] text-ink-900">
               Teach what you know.
@@ -411,7 +412,7 @@ const Home = () => {
         </div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="text-6xl mb-4">🚀</div>
+          {/* <div className="text-6xl mb-4">🚀</div> */}
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
             Ready to start your learning journey?
           </h2>
