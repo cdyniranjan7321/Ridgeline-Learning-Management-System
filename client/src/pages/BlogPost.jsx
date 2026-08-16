@@ -226,6 +226,7 @@ const BlogPost = () => {
 
   return (
     <div className="bg-white">
+      
       {/* Hero Image */}
       <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
         <img

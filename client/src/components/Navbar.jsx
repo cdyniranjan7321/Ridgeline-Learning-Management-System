@@ -40,6 +40,7 @@ const Navbar = () => {
   return (
     <header className="sticky top-0 z-40 bg-parchment-50/90 backdrop-blur border-b border-ink-900/8">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0" onClick={() => setOpen(false)}>
           <span className="h-8 w-8 rounded-lg bg-ink-900 text-amber-400 font-display font-bold flex items-center justify-center text-sm">
