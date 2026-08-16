@@ -88,6 +88,7 @@ const Blog = () => {
 
   return (
     <div className="bg-white">
+
       {/* Enhanced Hero Section */}
       <section className="relative bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white overflow-hidden">
         {/* Animated Background Elements */}
@@ -105,6 +106,7 @@ const Blog = () => {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-22">
           <div className={`text-center transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            
             {/* Badge */}
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 animate-pulse-slow">
               <span className="relative flex h-3 w-3">
