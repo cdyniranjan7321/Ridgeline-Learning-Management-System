@@ -117,6 +117,7 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
+      
       {/* Hero Section with Animation */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-20 sm:pt-20 sm:pb-28">
         {/* Animated background elements */}
