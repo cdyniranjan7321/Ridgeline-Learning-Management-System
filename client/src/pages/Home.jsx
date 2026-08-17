@@ -415,6 +415,7 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           
           {/* <div className="text-6xl mb-4">🚀</div> */}
+          
           <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
             Ready to start your learning journey?
           </h2>
