@@ -100,6 +100,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden border-t border-ink-900/8 px-4 py-3 space-y-1 bg-parchment-50">
+          
           {/* Main Navigation Links */}
           {navItems.map((item) => (
             <NavItem key={item.to} to={item.to}>
