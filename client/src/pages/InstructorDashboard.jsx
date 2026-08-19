@@ -69,6 +69,7 @@ const InstructorDashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-white to-purple-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+
         {/* Header Section */}
         <div className="relative bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-6 sm:p-8 mb-8 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
@@ -121,6 +122,7 @@ const InstructorDashboard = () => {
           {/* Main Content - Courses List */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              
               {/* Header with Tabs */}
               <div className="px-4 sm:px-6 py-4 border-b border-gray-200 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
