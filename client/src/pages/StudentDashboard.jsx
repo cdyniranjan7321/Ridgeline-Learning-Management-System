@@ -114,7 +114,7 @@ const StudentDashboard = () => {
                 Find New Courses
               </Link>
             </div>
-            
+
             {/* Learning Streak */}
             <div className="mt-4 flex items-center gap-4 text-white/90">
               <div className="flex items-center gap-2">
@@ -152,6 +152,7 @@ const StudentDashboard = () => {
           {/* Main Content - Enrolled Courses */}
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+              
               {/* Header with Tabs */}
               <div className="px-4 sm:px-6 py-4 border-b border-gray-200 flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
