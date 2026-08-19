@@ -86,6 +86,7 @@ const StudentDashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50/50 via-white to-indigo-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        
         {/* Header Section */}
         <div className="relative bg-gradient-to-r from-indigo-600 to-purple-600 rounded-3xl p-6 sm:p-8 mb-8 overflow-hidden">
           <div className="absolute inset-0 opacity-10">
